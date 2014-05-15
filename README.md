@@ -28,6 +28,14 @@ The motion detection is implemented using opencv's python bindings, which provid
 
 #### How to use 
 1. edit motion_detection.py. scroll to the bottom where you should enter your email details (smpt server)
-  * `$ sudo reboot`
+  * ```send_email = 'email_to_send_images_to@gmail.com'  # where you want the email sent to
+    # smpt server settings...
+    smpt_server_url = 'smtp.gmail.com'
+    username = 'your_email@gmail.com'  # username of your smpt server
+    # (password is entered at commandline)
+    user_email = None  # if different from username (leave 'None' for gmail)
+    # trigger level
+    trigger_level = 10```
+    
 2. run the motion_detection.py in python
   * `$ python motion_detection.py 'my_password'`
