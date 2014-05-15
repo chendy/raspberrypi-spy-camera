@@ -3,7 +3,7 @@ Raspberrypi Spy Camera
 
 Turns a Raspberry Pi plus camera module into a intelligent 'spy camera'. If motion is detected, an email is sent to a chosen email address containing the pictures captured.
 
-The motion detection is implemened using opencv's python bindings
+The motion detection is implemented using opencv's python bindings
 
 
 #### To install on a Rasbperry Pi running Kano OS
