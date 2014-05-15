@@ -1,7 +1,8 @@
-'''
-Senthil Seveelavanan 2014
-
-'''
+# Copyright (c) Senthil Seveelavanan 2014
+#
+# This software may be used and distributed
+# according to the terms of the GNU General Public License version 2, incorporated
+# herein by reference.
 
 import cv2
 import picamera
@@ -40,7 +41,6 @@ class MotionDetector():
             camera.resolution = (640, 480)
 
             motion = False
-            first_run = True
 
             for foo in camera.capture_continuous(stream, format='jpeg'):
                 #start_time = datetime.now()

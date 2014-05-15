@@ -1,13 +1,14 @@
-'''
-Senthil Seveelavanan 2014
-'''
+# Copyright (c) Senthil Seveelavanan 2014
+#
+# This software may be used and distributed
+# according to the terms of the GNU General Public License version 2, incorporated
+# herein by reference.
 
-# Send an HTML email with an embedded image and a plain text message for
-# email clients that don't want to_email display the HTML.
 
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
+
 
 class EmailServer:
     def __init__(self, username, password, smpt_server_url, user_email=None):
@@ -40,7 +41,7 @@ class EmailServer:
         # reset id (counter)
         self.id = 0
 
-    def send_email(self, email):        
+    def send_email(self, email):
         self.msgRoot['beto_email'] = email
         # Send the email (this example assumes SMTP authentication is required)
         import smtplib
@@ -64,12 +65,12 @@ class EmailServer:
 
 if __name__ == '__main__':
     import sys
-    
+
     if len(sys.argv) == 5:
         # first argument is the filename, so ignore
         send_email, username, password, smpt_server_url = sys.argv[1:]
         es = EmailServer(username, password, smpt_server_url)
-    elif len(sys.argv) == 6:    
+    elif len(sys.argv) == 6:
         send_email, username, password, smpt_server_url, email = sys.argv[1:]
         es = EmailServer(username, password, smpt_server_url, email)
     else:
@@ -82,4 +83,4 @@ if __name__ == '__main__':
     es.attach_file_image('test.jpg')
     es.attach_file_image('test.jpg')
     es.send_email(send_email)
-    
+
